@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Agent Marketplace - Build in 24 Hours Challenge</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicons/favicon.png">
+    <meta name="description" content="Build and launch a complete AI Agent Marketplace in 24 hours. Purchase ready-to-use AI agents and join our community.">
+    <meta property="og:title" content="AI Agent Marketplace - 24-Hour Challenge">
+    <meta property="og:description" content="Watch us build a complete AI Agent Marketplace live in 24 hours.">
+    <meta property="og:image" content="https://ayojeges.github.io/ai-agent-marketplace/assets/og-image.png">
+    <meta property="og:url" content="https://aiagents.specregistry.com">
+    <meta name="twitter:card" content="summary_large_image">
+
     <style>
-        * {
+        /* IMMEDIATE FIX - Inline styles until CSS file is uploaded */
+        body {
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-        }
-        
-        body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             min-height: 100vh;
-            padding: 20px;
         }
         
         .container {
@@ -30,103 +38,149 @@
             margin-bottom: 60px;
         }
         
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
         .countdown {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 40px auto;
-            max-width: 600px;
             text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .countdown h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
         
         .timer {
-            font-size: 3.5rem;
-            font-weight: bold;
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
             margin: 20px 0;
-            font-family: 'Courier New', monospace;
         }
         
         .challenge-info {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
             padding: 30px;
-            margin: 30px 0;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .challenge-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
         
         .agents-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .agent-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 25px;
-            transition: transform 0.3s ease;
-        }
-        
-        .agent-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .price {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #4ade80;
-            margin: 15px 0;
-        }
-        
-        .button {
-            background: #4ade80;
-            color: #1a1a1a;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 20px;
-            transition: background 0.3s ease;
-        }
-        
-        .button:hover {
-            background: #22c55e;
-        }
-        
-        .bundle {
-            background: rgba(74, 222, 128, 0.2);
-            border: 2px solid #4ade80;
-        }
-        
-        .status-updates {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            padding: 25px;
             margin-top: 40px;
         }
         
-        .update {
+        .agent-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .agent-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #f093fb;
+        }
+        
+        .agent-card p {
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4ade80;
+            margin: 20px 0;
+        }
+        
+        .button {
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .live-updates {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 60px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .live-updates h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .update-item {
+            background: rgba(255, 255, 255, 0.05);
             padding: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #f093fb;
         }
         
-        .timestamp {
-            color: #a5b4fc;
-            font-size: 0.9rem;
-        }
-        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .timer {
+            .header h1 {
                 font-size: 2.5rem;
+            }
+            
+            .timer {
+                font-size: 3rem;
             }
             
             .agents-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
             }
         }
     </style>
@@ -134,9 +188,9 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🚀 AI Agent Marketplace</h1>
+            <h1>🚀 Your AI Team, Ready to Work</h1>
             <p style="font-size: 1.2rem; margin-top: 10px; opacity: 0.9;">
-                24-Hour Business Challenge - Building Live Right Now
+                Stop wasting time. Get 5 specialized AI agents that handle your toughest tasks.
             </p>
         </div>
         
@@ -155,69 +209,75 @@
             </p>
             <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
                 <div style="text-align: center;">
-                    <div style="font-size: 2rem; font-weight: bold;">$15K+</div>
-                    <div style="opacity: 0.8;">Revenue Goal</div>
+                    <div style="font-size: 2rem; font-weight: bold;">10+</div>
+                    <div style="opacity: 0.8;">Hours Saved Weekly</div>
                 </div>
                 <div style="text-align: center;">
                     <div style="font-size: 2rem; font-weight: bold;">5</div>
-                    <div style="opacity: 0.8;">AI Agents</div>
+                    <div style="opacity: 0.8;">Specialized Experts</div>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 2rem; font-weight: bold;">24</div>
-                    <div style="opacity: 0.8;">Hour Timeline</div>
+                    <div style="font-size: 2rem; font-weight: bold;">$197</div>
+                    <div style="opacity: 0.8;">One-Time Investment</div>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 2rem; font-weight: bold;">10</div>
-                    <div style="opacity: 0.8;">Team Members</div>
+                    <div style="font-size: 2rem; font-weight: bold;">30-Day</div>
+                    <div style="opacity: 0.8;">Money-Back Guarantee</div>
                 </div>
             </div>
         </div>
         
-        <h2 style="margin-top: 50px;">🤖 Available AI Agents</h2>
-        <p style="opacity: 0.8; margin-bottom: 20px;">Pre-built agents ready for immediate use</p>
+        <h2 style="margin-top: 50px;">🤖 Your AI Team Members</h2>
+        <p style="opacity: 0.8; margin-bottom: 20px;">Stop doing everything yourself. Hire these experts:</p>
         
         <div class="agents-grid">
             <div class="agent-card">
-                <h3>📱 Social Media Generator</h3>
-                <p>Create engaging content for Twitter, LinkedIn, Instagram</p>
+                <h3>📱 Social Media Manager</h3>
+                <p><strong>Pain Point:</strong> "My social media is inconsistent and takes too much time"<br>
+                <strong>Solution:</strong> Creates engaging posts, schedules content, analyzes performance</p>
                 <div class="price">$97</div>
-                <button class="button" onclick="buyAgent('social')">Buy Now</button>
+                <button class="button" onclick="buyAgent('social')">Get My Time Back</button>
             </div>
             
             <div class="agent-card">
-                <h3>💬 Customer Support Bot</h3>
-                <p>Automate customer service with AI-powered responses</p>
+                <h3>💬 24/7 Support Assistant</h3>
+                <p><strong>Pain Point:</strong> "I'm overwhelmed with customer questions"<br>
+                <strong>Solution:</strong> Answers FAQs instantly, qualifies leads, never sleeps</p>
                 <div class="price">$147</div>
-                <button class="button" onclick="buyAgent('support')">Buy Now</button>
+                <button class="button" onclick="buyAgent('support')">Stop Being Overwhelmed</button>
             </div>
             
             <div class="agent-card">
-                <h3>🔍 SEO Content Writer</h3>
-                <p>Generate SEO-optimized articles and blog posts</p>
+                <h3>🔍 SEO Content Expert</h3>
+                <p><strong>Pain Point:</strong> "I struggle to write content that ranks"<br>
+                <strong>Solution:</strong> Creates SEO-optimized articles that drive organic traffic</p>
                 <div class="price">$197</div>
-                <button class="button" onclick="buyAgent('seo')">Buy Now</button>
+                <button class="button" onclick="buyAgent('seo')">Get More Traffic</button>
             </div>
             
             <div class="agent-card">
-                <h3>📧 Email Marketing Automator</h3>
-                <p>Create and optimize email campaigns automatically</p>
+                <h3>📧 Email Marketing Pro</h3>
+                <p><strong>Pain Point:</strong> "My email campaigns don't convert"<br>
+                <strong>Solution:</strong> Writes compelling emails that actually get opened and clicked</p>
                 <div class="price">$127</div>
-                <button class="button" onclick="buyAgent('email')">Buy Now</button>
+                <button class="button" onclick="buyAgent('email')">Boost Conversions</button>
             </div>
             
             <div class="agent-card">
-                <h3>📊 Data Scraper & Analyzer</h3>
-                <p>Extract and analyze data from any website</p>
+                <h3>📊 Data & Research Analyst</h3>
+                <p><strong>Pain Point:</strong> "I make decisions without proper data"<br>
+                <strong>Solution:</strong> Extracts insights, analyzes competitors, finds opportunities</p>
                 <div class="price">$247</div>
-                <button class="button" onclick="buyAgent('data')">Buy Now</button>
+                <button class="button" onclick="buyAgent('data')">Make Smarter Decisions</button>
             </div>
             
             <div class="agent-card bundle">
-                <h3>🎁 Complete Bundle</h3>
-                <p>All 5 agents + exclusive community access</p>
+                <h3>🎁 The Complete Team</h3>
+                <p><strong>Pain Point:</strong> "I'm trying to do everything myself and burning out"<br>
+                <strong>Solution:</strong> All 5 experts + exclusive community + priority support</p>
                 <div class="price">$497</div>
-                <p style="font-size: 0.9rem; opacity: 0.9;">Save $218 vs buying separately</p>
-                <button class="button" onclick="buyAgent('bundle')" style="background: #fbbf24; color: #1a1a1a;">Get Bundle</button>
+                <p style="font-size: 0.9rem; opacity: 0.9;">Save $218 vs hiring individually</p>
+                <button class="button" onclick="buyAgent('bundle')" style="background: #fbbf24; color: #1a1a1a;">Build My Team</button>
             </div>
         </div>
         
@@ -234,53 +294,35 @@
                 <div>✅ Project documentation started</div>
             </div>
             <div class="update">
-                <div class="timestamp">Next Update: 03:45 UTC</div>
-                <div>🔄 Engineering team building first agent</div>
-                <div>🔄 Growth team preparing marketing launch</div>
-                <div>🔄 Awaiting domain setup: aiagents.specregistry.com</div>
+                <div class="timestamp">04:05 UTC - DevOps Deployment</div>
+                <div>✅ GitHub Pages optimization complete</div>
+                <div>✅ Security headers configured</div>
+                <div>✅ CDN caching enabled</div>
             </div>
         </div>
     </div>
     
+    <script src="/ai-agent-marketplace/assets/script.js" defer></script>
+    <script src="/ai-agent-marketplace/assets/stripe.js" defer></script>
+    <script src="/ai-agent-marketplace/assets/analytics.js" defer></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
-        // Countdown timer
-        const endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
-        
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = endTime - now;
-            
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById("countdown").innerHTML = 
-                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            
-            if (distance < 0) {
-                document.getElementById("countdown").innerHTML = "CHALLENGE ENDED";
-            }
-        }
-        
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-        
-        // Purchase function
-        function buyAgent(agentType) {
-            alert(`🚀 ${agentType.toUpperCase()} agent purchase flow coming soon!\n\nStripe integration will be live in the next update.`);
-        }
-        
-        // Auto-update status every 5 minutes
-        setInterval(() => {
-            const updates = document.querySelector('.status-updates');
-            const newUpdate = document.createElement('div');
-            newUpdate.className = 'update';
-            newUpdate.innerHTML = `
-                <div class="timestamp">${new Date().toUTCString().split(' ')[4]}</div>
-                <div>✅ Live update: Team progress ongoing</div>
-            `;
-            updates.appendChild(newUpdate);
-        }, 300000); // 5 minutes
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
     </script>
+    
+    <!-- Plausible Analytics -->
+
+        <div class="footer" style="margin-top: 60px; padding-top: 30px; border-top: 1px solid #334155; text-align: center; color: #94a3b8; font-size: 0.9rem;">
+            <p>Need help? Contact us: <a href="mailto:support@specregistry.com" style="color: #60a5fa;">support@specregistry.com</a> | Sales: <a href="mailto:sales@specregistry.com" style="color: #60a5fa;">sales@specregistry.com</a></p>
+            <p style="margin-top: 10px;">© 2026 AI Agent Marketplace. All rights reserved.</p>
+        </div>
+    </div>
+    
+    <script defer data-domain="aiagents.specregistry.com" src="https://plausible.io/js/script.js"></script>
 </body>
 </html>

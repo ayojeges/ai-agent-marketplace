@@ -55,56 +55,16 @@ class StripeIntegration {
     }
     
     async handlePurchase(productId) {
-        try {
-            // Show loading state
-            this.showLoading(true, `Processing ${productId} purchase...`);
-            
-            // Get customer email (simplified for demo)
-            const customerEmail = prompt('Enter your email for delivery:') || 'customer@example.com';
-            
-            if (!customerEmail) {
-                this.showLoading(false);
-                alert('Email is required for product delivery');
-                return;
-            }
-            
-            // Create checkout session
-            const response = await fetch('/api/stripe/create-checkout', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    productId: productId,
-                    customerEmail: customerEmail
-                })
-            });
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            
-            // Redirect to Stripe Checkout
-            const result = await this.stripe.redirectToCheckout({
-                sessionId: data.sessionId
-            });
-            
-            if (result.error) {
-                throw new Error(result.error.message);
-            }
-            
-        } catch (error) {
-            console.error('Purchase error:', error);
-            this.showLoading(false);
-            
-            // Fallback to simple alert for now
-            alert(`Purchase flow temporarily unavailable. Please try again later.\n\nError: ${error.message}`);
-            
-            // Alternative: Show manual payment instructions
-            this.showManualPaymentOption(productId);
-        }
+        // IMMEDIATELY DISABLE ALL PURCHASES - PRODUCT NOT READY
+        alert('🚫 PURCHASES TEMPORARILY DISABLED\n\nWe\'re currently building the actual AI agents and will enable purchases once they\'re ready.\n\nJoin our waitlist to be notified when we launch: support@specregistry.com');
+        
+        // Log the attempt for analytics
+        console.log(`Purchase attempt blocked - product not ready: ${productId}`);
+        
+        // Optionally redirect to a waitlist page
+        // window.location.href = '/waitlist';
+        
+        return false;
     }
     
     showLoading(show, message = 'Processing...') {
@@ -216,22 +176,42 @@ class StripeIntegration {
 document.addEventListener('DOMContentLoaded', () => {
     window.stripeIntegration = new StripeIntegration();
     
-    // Add test mode indicator
-    if (window.location.hostname.includes('github.io') || window.location.hostname.includes('localhost')) {
-        const testIndicator = document.createElement('div');
-        testIndicator.style.cssText = `
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background: #fbbf24;
-            color: #1a1a1a;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            z-index: 1000;
-        `;
-        testIndicator.textContent = 'TEST MODE';
-        document.body.appendChild(testIndicator);
-    }
+    // Add COMING SOON indicator
+    const comingSoonIndicator = document.createElement('div');
+    comingSoonIndicator.style.cssText = `
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background: #ef4444;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        border: 2px solid white;
+    `;
+    comingSoonIndicator.textContent = '🚫 PURCHASES DISABLED - COMING SOON';
+    document.body.appendChild(comingSoonIndicator);
+    
+    // Also update all purchase buttons to show "Coming Soon"
+    setTimeout(() => {
+        const purchaseButtons = document.querySelectorAll('.button[data-product-id], .button[onclick*="buyAgent"]');
+        purchaseButtons.forEach(button => {
+            button.textContent = 'Coming Soon';
+            button.style.opacity = '0.7';
+            button.style.cursor = 'not-allowed';
+            button.style.backgroundColor = '#6b7280';
+            
+            // Remove any existing click handlers
+            button.onclick = null;
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                alert('🚫 AI Agents coming soon! We\'re building them now.\n\nJoin waitlist: support@specregistry.com');
+                return false;
+            });
+        });
+    }, 100);
 });

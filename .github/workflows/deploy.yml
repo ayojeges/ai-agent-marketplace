@@ -42,27 +42,176 @@ jobs:
           # Create optimized assets
           mkdir -p _site/assets
           
-          # Generate optimized CSS
+          # Generate optimized CSS - Using the fix from ai-agent-marketplace-fix.css
           cat > _site/assets/style.css << 'EOF'
-          /* Optimized CSS */
-          *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif}
-          body{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;min-height:100vh;padding:20px}
-          .container{max-width:1200px;margin:0 auto;padding:40px 20px}
-          .header{text-align:center;margin-bottom:60px}
-          .countdown{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:20px;padding:30px;margin:40px auto;max-width:600px;text-align:center}
-          .timer{font-size:3.5rem;font-weight:700;margin:20px 0;font-family:'Courier New',monospace}
-          .challenge-info{background:rgba(255,255,255,.05);border-radius:15px;padding:30px;margin:30px 0}
-          .agents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin:40px 0}
-          .agent-card{background:rgba(255,255,255,.1);border-radius:15px;padding:25px;transition:transform .3s ease}
-          .agent-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.15)}
-          .price{font-size:2rem;font-weight:700;color:#4ade80;margin:15px 0}
-          .button{background:#4ade80;color:#1a1a1a;border:none;padding:15px 30px;border-radius:10px;font-size:1.1rem;font-weight:700;cursor:pointer;width:100%;margin-top:20px;transition:background .3s ease}
-          .button:hover{background:#22c55e}
-          .bundle{background:rgba(74,222,128,.2);border:2px solid #4ade80}
-          .status-updates{background:rgba(0,0,0,.3);border-radius:15px;padding:25px;margin-top:40px}
-          .update{padding:15px;border-bottom:1px solid rgba(255,255,255,.1)}
-          .timestamp{color:#a5b4fc;font-size:.9rem}
-          @media (max-width:768px){.timer{font-size:2.5rem}.agents-grid{grid-template-columns:1fr}}
+          /* Fix for AI Agent Marketplace broken CSS */
+          /* Missing style.css file - creating basic styles */
+          
+          body {
+              font-family: 'Inter', sans-serif;
+              margin: 0;
+              padding: 0;
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              color: white;
+              min-height: 100vh;
+          }
+          
+          .container {
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 40px 20px;
+          }
+          
+          .header {
+              text-align: center;
+              margin-bottom: 60px;
+          }
+          
+          .header h1 {
+              font-size: 3.5rem;
+              font-weight: 700;
+              margin-bottom: 20px;
+              background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+          }
+          
+          .countdown {
+              text-align: center;
+              background: rgba(255, 255, 255, 0.1);
+              padding: 30px;
+              border-radius: 20px;
+              margin-bottom: 60px;
+              backdrop-filter: blur(10px);
+          }
+          
+          .countdown h2 {
+              font-size: 2rem;
+              margin-bottom: 20px;
+          }
+          
+          .timer {
+              font-size: 4rem;
+              font-weight: 700;
+              font-family: monospace;
+              background: rgba(0, 0, 0, 0.3);
+              padding: 20px;
+              border-radius: 10px;
+              display: inline-block;
+              margin: 20px 0;
+          }
+          
+          .challenge-info {
+              background: rgba(255, 255, 255, 0.1);
+              padding: 30px;
+              border-radius: 20px;
+              margin-bottom: 60px;
+              backdrop-filter: blur(10px);
+          }
+          
+          .challenge-info h2 {
+              font-size: 2rem;
+              margin-bottom: 20px;
+          }
+          
+          .agents-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 30px;
+              margin-top: 40px;
+          }
+          
+          .agent-card {
+              background: rgba(255, 255, 255, 0.15);
+              padding: 30px;
+              border-radius: 20px;
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .agent-card:hover {
+              transform: translateY(-10px);
+              box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          }
+          
+          .agent-card h3 {
+              font-size: 1.5rem;
+              margin-bottom: 15px;
+              color: #f093fb;
+          }
+          
+          .agent-card p {
+              line-height: 1.6;
+              opacity: 0.9;
+              margin-bottom: 20px;
+          }
+          
+          .price {
+              font-size: 2.5rem;
+              font-weight: 700;
+              color: #4ade80;
+              margin: 20px 0;
+          }
+          
+          .button {
+              background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+              color: white;
+              border: none;
+              padding: 15px 30px;
+              font-size: 1.1rem;
+              font-weight: 600;
+              border-radius: 10px;
+              cursor: pointer;
+              width: 100%;
+              transition: transform 0.2s ease, box-shadow 0.2s ease;
+          }
+          
+          .button:hover {
+              transform: scale(1.05);
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+          }
+          
+          .live-updates {
+              background: rgba(255, 255, 255, 0.1);
+              padding: 30px;
+              border-radius: 20px;
+              margin-top: 60px;
+              backdrop-filter: blur(10px);
+          }
+          
+          .live-updates h2 {
+              font-size: 2rem;
+              margin-bottom: 20px;
+          }
+          
+          .update-item {
+              background: rgba(255, 255, 255, 0.05);
+              padding: 15px;
+              border-radius: 10px;
+              margin-bottom: 10px;
+              border-left: 4px solid #f093fb;
+          }
+          
+          /* Responsive design */
+          @media (max-width: 768px) {
+              .header h1 {
+                  font-size: 2.5rem;
+              }
+              
+              .timer {
+                  font-size: 3rem;
+              }
+              
+              .agents-grid {
+                  grid-template-columns: 1fr;
+              }
+              
+              .container {
+                  padding: 20px;
+              }
+          }
           EOF
           
           # Generate optimized JS

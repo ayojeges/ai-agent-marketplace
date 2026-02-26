@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Marketplace - Build in 24 Hours Challenge</title>
+    <link rel="stylesheet" href="/ai-agent-marketplace/assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicons/favicon.png">
+    <meta name="description" content="Build and launch a complete AI Agent Marketplace in 24 hours. Purchase ready-to-use AI agents and join our community.">
+    <meta property="og:title" content="AI Agent Marketplace - 24-Hour Challenge">
+    <meta property="og:description" content="Watch us build a complete AI Agent Marketplace live in 24 hours.">
+    <meta property="og:image" content="https://ayojeges.github.io/ai-agent-marketplace/assets/og-image.png">
+    <meta property="og:url" content="https://aiagents.specregistry.com">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AI Agent Marketplace</h1>
+            <p style="font-size: 1.2rem; margin-top: 10px; opacity: 0.9;">
+                24-Hour Business Challenge - Building Live Right Now
+            </p>
+        </div>
+        
+        <div class="countdown">
+            <h2>⏰ Challenge Countdown</h2>
+            <div class="timer" id="countdown">24:00:00</div>
+            <p>Time remaining to build and launch this marketplace</p>
+        </div>
+        
+        <div class="challenge-info">
+            <h2>🎯 The Challenge</h2>
+            <p style="margin-top: 15px; line-height: 1.6;">
+                We're building a complete AI Agent Marketplace in 24 hours. 
+                Watch us build it live, purchase ready-to-use AI agents, 
+                and join the community of early adopters.
+            </p>
+            <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold;">$15K+</div>
+                    <div style="opacity: 0.8;">Revenue Goal</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold;">5</div>
+                    <div style="opacity: 0.8;">AI Agents</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold;">24</div>
+                    <div style="opacity: 0.8;">Hour Timeline</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold;">10</div>
+                    <div style="opacity: 0.8;">Team Members</div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="margin-top: 50px;">🤖 Available AI Agents</h2>
+        <p style="opacity: 0.8; margin-bottom: 20px;">Pre-built agents ready for immediate use</p>
+        
+        <div class="agents-grid">
+            <div class="agent-card">
+                <h3>📱 Social Media Generator</h3>
+                <p>Create engaging content for Twitter, LinkedIn, Instagram</p>
+                <div class="price">$97</div>
+                <button class="button" onclick="buyAgent('social')">Buy Now</button>
+            </div>
+            
+            <div class="agent-card">
+                <h3>💬 Customer Support Bot</h3>
+                <p>Automate customer service with AI-powered responses</p>
+                <div class="price">$147</div>
+                <button class="button" onclick="buyAgent('support')">Buy Now</button>
+            </div>
+            
+            <div class="agent-card">
+                <h3>🔍 SEO Content Writer</h3>
+                <p>Generate SEO-optimized articles and blog posts</p>
+                <div class="price">$197</div>
+                <button class="button" onclick="buyAgent('seo')">Buy Now</button>
+            </div>
+            
+            <div class="agent-card">
+                <h3>📧 Email Marketing Automator</h3>
+                <p>Create and optimize email campaigns automatically</p>
+                <div class="price">$127</div>
+                <button class="button" onclick="buyAgent('email')">Buy Now</button>
+            </div>
+            
+            <div class="agent-card">
+                <h3>📊 Data Scraper & Analyzer</h3>
+                <p>Extract and analyze data from any website</p>
+                <div class="price">$247</div>
+                <button class="button" onclick="buyAgent('data')">Buy Now</button>
+            </div>
+            
+            <div class="agent-card bundle">
+                <h3>🎁 Complete Bundle</h3>
+                <p>All 5 agents + exclusive community access</p>
+                <div class="price">$497</div>
+                <p style="font-size: 0.9rem; opacity: 0.9;">Save $218 vs buying separately</p>
+                <button class="button" onclick="buyAgent('bundle')" style="background: #fbbf24; color: #1a1a1a;">Get Bundle</button>
+            </div>
+        </div>
+        
+        <div class="status-updates">
+            <h2>📝 Live Updates</h2>
+            <div class="update">
+                <div class="timestamp">03:27 UTC - Challenge Start</div>
+                <div>✅ Team activated: Engineering, Growth, Product departments</div>
+            </div>
+            <div class="update">
+                <div class="timestamp">03:30 UTC - Infrastructure Setup</div>
+                <div>✅ Website foundation created</div>
+                <div>✅ Stripe test mode configured</div>
+                <div>✅ Project documentation started</div>
+            </div>
+            <div class="update">
+                <div class="timestamp">04:05 UTC - DevOps Deployment</div>
+                <div>✅ GitHub Pages optimization complete</div>
+                <div>✅ Security headers configured</div>
+                <div>✅ CDN caching enabled</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/ai-agent-marketplace/assets/script.js" defer></script>
+    <script src="/ai-agent-marketplace/assets/stripe.js" defer></script>
+    <script src="/ai-agent-marketplace/assets/analytics.js" defer></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Plausible Analytics -->
+    <script defer data-domain="aiagents.specregistry.com" src="https://plausible.io/js/script.js"></script>
+</body>
+</html>

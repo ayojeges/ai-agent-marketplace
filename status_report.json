@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-02-26T23:44:14.301489",
+  "overall_progress": 45,
+  "team_progress": {
+    "product": {
+      "completed": 3,
+      "total": 6,
+      "status": "in_progress"
+    },
+    "engineering": {
+      "completed": 6,
+      "total": 6,
+      "status": "complete"
+    },
+    "growth": {
+      "completed": 0,
+      "total": 6,
+      "status": "in_progress"
+    },
+    "ops": {
+      "completed": 2,
+      "total": 6,
+      "status": "in_progress"
+    }
+  },
+  "infrastructure": {
+    "dns_resolved": true,
+    "website_accessible": false,
+    "custom_domain": "aiagents.specregistry.com"
+  },
+  "next_checkpoint": "2026-02-27T00:44:14.301534"
+}

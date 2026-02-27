@@ -1,0 +1,23 @@
+# Social Media Manager AI Agent Requirements
+
+# Core dependencies
+python>=3.8
+schedule>=1.2.0
+requests>=2.31.0
+
+# Development dependencies (optional)
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+
+# Analytics (optional for enhanced features)
+pandas>=2.0.0
+matplotlib>=3.7.0
+
+# API clients (for future integration)
+# tweepy>=4.14.0  # Twitter API
+# linkedin-api>=2.0.0  # LinkedIn API
+# instagram-private-api>=1.6.0  # Instagram API
+
+# Environment management
+python-dotenv>=1.0.0

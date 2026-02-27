@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-02-26T14:28:08.326580",
+  "domain": "aiagents.specregistry.com",
+  "dns": {
+    "status": "not_resolved",
+    "ips": [],
+    "message": "\u274c DNS not resolving (NXDOMAIN)"
+  },
+  "website": null,
+  "next_check": "2026-02-26T14:33:08.326627"
+}

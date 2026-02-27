@@ -275,7 +275,7 @@ app.get('/success', (req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3334;
 app.listen(PORT, () => {
     console.log(`🚀 AI Agent Marketplace Stripe Server running on port ${PORT}`);
     console.log(`📦 Products: ${Object.keys(STRIPE_CONFIG.products).length}`);

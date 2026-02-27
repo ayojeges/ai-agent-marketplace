@@ -1,0 +1,49 @@
+{
+  "platforms": ["twitter", "linkedin", "instagram"],
+  "posting_schedule": {
+    "twitter": ["09:00", "13:00", "17:00"],
+    "linkedin": ["10:00", "15:00"],
+    "instagram": ["11:00", "19:00"]
+  },
+  "content_themes": ["industry_news", "tips", "case_studies", "behind_scenes"],
+  "hashtag_strategy": {
+    "popular": 3,
+    "niche": 5,
+    "branded": 2
+  },
+  "ai_api_key": "your_openai_api_key_here",
+  "analytics_enabled": true,
+  "auto_schedule": true,
+  "timezone": "UTC",
+  "brand_name": "Your Brand",
+  "industry": "technology",
+  "target_audience": ["entrepreneurs", "marketers", "business_owners"],
+  "content_tone": "professional",
+  "max_posts_per_day": {
+    "twitter": 3,
+    "linkedin": 2,
+    "instagram": 2
+  },
+  "engagement_goals": {
+    "twitter": {"likes": 50, "retweets": 10},
+    "linkedin": {"likes": 100, "comments": 5},
+    "instagram": {"likes": 200, "comments": 10}
+  },
+  "competitors_to_monitor": ["competitor1", "competitor2", "competitor3"],
+  "keywords_to_track": ["social media", "marketing", "automation", "AI"],
+  "auto_respond_to_comments": false,
+  "content_approval_required": false,
+  "backup_content_pool": 20,
+  "holiday_mode": false,
+  "performance_alerts": {
+    "enabled": true,
+    "engagement_drop_threshold": 30,
+    "check_interval_hours": 24
+  },
+  "export_formats": ["json", "csv", "pdf"],
+  "integration_webhooks": {
+    "slack": "your_slack_webhook_url",
+    "discord": "your_discord_webhook_url",
+    "email": "your_email_for_alerts"
+  }
+}

@@ -4,20 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Agent Marketplace - Hire Specialized AI Experts for Your Business</title>
-    <link rel="stylesheet" href="/assets/style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicons/favicon.png">
-    <meta name="description" content="Stop wasting time on repetitive tasks. Hire AI agents that work 24/7 for marketing, customer service, content creation, and data analysis. Save 10+ hours weekly.">
+    <meta name="description" content="Stop wasting time on repetitive tasks. Hire AI agents that work 24/7 for marketing, customer service, content creation, and data analysis. Save 10+ hours weekly. Updated: 09:42 UTC">
     <meta property="og:title" content="AI Agent Marketplace - Your 24/7 AI Team">
     <meta property="og:description" content="Hire specialized AI experts that handle your toughest business tasks. Save 10+ hours weekly with our 30-day money-back guarantee.">
-    <meta property="og:image" content="https://aiagents.specregistry.com/assets/og-image.png">
+    <meta property="og:image" content="https://ayojeges.github.io/ai-agent-marketplace/assets/og-image.png">
     <meta property="og:url" content="https://aiagents.specregistry.com">
     <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        /* IMMEDIATE FIX - Inline styles until CSS file is uploaded */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .countdown {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .countdown h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .timer {
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        
+        .challenge-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .challenge-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .agent-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .agent-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #f093fb;
+        }
+        
+        .agent-card p {
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4ade80;
+            margin: 20px 0;
+        }
+        
+        .button {
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .live-updates {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 60px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .live-updates h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .update-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #f093fb;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timer {
+                font-size: 3rem;
+            }
+            
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        <!-- WARNING BANNER - PURCHASES DISABLED -->
+        <div style="background: linear-gradient(45deg, #ef4444, #dc2626); color: white; padding: 20px; border-radius: 15px; margin-bottom: 40px; text-align: center; border: 3px solid white; box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);">
+            <h2 style="margin: 0 0 10px 0; font-size: 1.8rem;">🚫 IMPORTANT NOTICE</h2>
+            <p style="margin: 0; font-size: 1.1rem; opacity: 0.95;">
+                <strong>AI Agents are currently being built.</strong> Purchase functionality is disabled until products are ready.<br>
+                This is a preview site. Join our waitlist: <strong>support@specregistry.com</strong>
+            </p>
+        </div>
+        
         <div class="header">
             <h1>🚀 Your AI Team, Ready to Work</h1>
             <p style="font-size: 1.2rem; margin-top: 10px; opacity: 0.9;">
@@ -64,52 +242,70 @@
         
         <div class="agents-grid">
             <div class="agent-card">
-                <h3>📱 Social Media Manager</h3>
+                <h3>📱 Social Media Generator</h3>
                 <p><strong>Pain Point:</strong> "My social media is inconsistent and takes too much time"<br>
-                <strong>Solution:</strong> Creates engaging posts, schedules content, analyzes performance</p>
+                <strong>Solution:</strong> 45-page system, 50+ AI prompts, 10 Canva templates, video training</p>
                 <div class="price">$97</div>
-                <button class="button" onclick="buyAgent('social')">Get My Time Back</button>
+                <button class="button" onclick="buyAgent('social')">Stop Wasting Time - $97</button>
+                <p style="font-size: 0.85rem; margin-top: 10px; color: #64748b;">
+                    ✅ 30 templates • 15 hook formulas • 7-day calendar
+                </p>
             </div>
             
             <div class="agent-card">
-                <h3>💬 24/7 Support Assistant</h3>
+                <h3>💬 Customer Support Bot</h3>
                 <p><strong>Pain Point:</strong> "I'm overwhelmed with customer questions"<br>
-                <strong>Solution:</strong> Answers FAQs instantly, qualifies leads, never sleeps</p>
+                <strong>Solution:</strong> 60-page guide, 100+ FAQ templates, integration workflows</p>
                 <div class="price">$147</div>
-                <button class="button" onclick="buyAgent('support')">Stop Being Overwhelmed</button>
+                <button class="button" onclick="buyAgent('support')">End Support Overload - $147</button>
+                <p style="font-size: 0.85rem; margin-top: 10px; color: #64748b;">
+                    ✅ Reduce tickets by 80% • 24/7 coverage • Save $50k/year
+                </p>
             </div>
             
             <div class="agent-card">
-                <h3>🔍 SEO Content Expert</h3>
+                <h3>🔍 SEO Content Writer</h3>
                 <p><strong>Pain Point:</strong> "I struggle to write content that ranks"<br>
-                <strong>Solution:</strong> Creates SEO-optimized articles that drive organic traffic</p>
+                <strong>Solution:</strong> 75-page system, 50 article templates, SERP analysis framework</p>
                 <div class="price">$197</div>
-                <button class="button" onclick="buyAgent('seo')">Get More Traffic</button>
+                <button class="button" onclick="buyAgent('seo')">Rank #1 with AI - $197</button>
+                <p style="font-size: 0.85rem; margin-top: 10px; color: #64748b;">
+                    ✅ 500k traffic case study • E-A-T optimization • Scale to 100 articles/month
+                </p>
             </div>
             
             <div class="agent-card">
-                <h3>📧 Email Marketing Pro</h3>
+                <h3>📧 Email Marketing Automator</h3>
                 <p><strong>Pain Point:</strong> "My email campaigns don't convert"<br>
-                <strong>Solution:</strong> Writes compelling emails that actually get opened and clicked</p>
+                <strong>Solution:</strong> 50-page machine, 20 email sequences, AI copywriting prompts</p>
                 <div class="price">$127</div>
-                <button class="button" onclick="buyAgent('email')">Boost Conversions</button>
+                <button class="button" onclick="buyAgent('email')">40% Open Rates - $127</button>
+                <p style="font-size: 0.85rem; margin-top: 10px; color: #64748b;">
+                    ✅ $250k case study • Automate 90% • High-conversion templates
+                </p>
             </div>
             
             <div class="agent-card">
-                <h3>📊 Data & Research Analyst</h3>
+                <h3>📊 Data Scraper & Analyzer</h3>
                 <p><strong>Pain Point:</strong> "I make decisions without proper data"<br>
-                <strong>Solution:</strong> Extracts insights, analyzes competitors, finds opportunities</p>
+                <strong>Solution:</strong> 80-page system, Python scripts, Google Sheets automation</p>
                 <div class="price">$247</div>
-                <button class="button" onclick="buyAgent('data')">Make Smarter Decisions</button>
+                <button class="button" onclick="buyAgent('data')">Turn Data into $ - $247</button>
+                <p style="font-size: 0.85rem; margin-top: 10px; color: #64748b;">
+                    ✅ $1M deal case study • Zero-code extraction • Competitor intelligence
+                </p>
             </div>
             
             <div class="agent-card bundle">
-                <h3>🎁 The Complete Team</h3>
+                <h3>🎁 Complete AI Team Bundle</h3>
                 <p><strong>Pain Point:</strong> "I'm trying to do everything myself and burning out"<br>
-                <strong>Solution:</strong> All 5 experts + exclusive community + priority support</p>
+                <strong>Solution:</strong> All 5 agents + community + blueprint + custom setup</p>
                 <div class="price">$497</div>
-                <p style="font-size: 0.9rem; opacity: 0.9;">Save $218 vs hiring individually</p>
-                <button class="button" onclick="buyAgent('bundle')" style="background: #fbbf24; color: #1a1a1a;">Build My Team</button>
+                <p style="font-size: 0.9rem; opacity: 0.9;">Save $218 vs buying individually</p>
+                <button class="button" onclick="buyAgent('bundle')" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">Get Complete Team - $497</button>
+                <p style="font-size: 0.85rem; margin-top: 10px; color: #64748b;">
+                    ✅ Exclusive community • Business automation blueprint • Custom setup consultation
+                </p>
             </div>
         </div>
         
@@ -136,9 +332,9 @@
         </div>
     </div>
     
-    <script src="/assets/script.js" defer></script>
-    <script src="/assets/stripe-simple.js" defer></script>
-    <script src="/assets/analytics.js" defer></script>
+    <script src="/ai-agent-marketplace/assets/script.js" defer></script>
+    <script src="/ai-agent-marketplace/assets/stripe-simple.js" defer></script>
+    <script src="/ai-agent-marketplace/assets/analytics.js" defer></script>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -159,4 +355,4 @@
     
     <script defer data-domain="aiagents.specregistry.com" src="https://plausible.io/js/script.js"></script>
 </body>
-</html>
+</html><!-- TEST UPDATE: Thu Feb 26 23:16:02 UTC 2026 -->

@@ -158,9 +158,8 @@ class SimpleStripeCheckout {
         // Encode data for URL
         const encodedData = btoa(JSON.stringify(checkoutData));
         
-        // Redirect to a simple checkout page
-        // In production, this would be a Stripe Checkout Session URL
-        window.location.href = `/checkout.html?data=${encodedData}`;
+        // Redirect to checkout page with product info
+        window.location.href = `/checkout.html?data=${encodedData}&email=${encodeURIComponent(customerEmail)}`;
     }
     
     isValidEmail(email) {
